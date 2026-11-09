@@ -2,15 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <!-- Bundled at RiffMacster.app/Contents/Library/LaunchAgents and registered by the app
+         itself via SMAppService. Starts the helper only when the guitar's USB device appears
+         (plugged in, dongle paired, or already present); no RunAtLoad / KeepAlive, so it
+         exits on unplug and launchd starts it again on the next connect. -->
     <key>Label</key>
     <string>com.riffmacster.helper</string>
+    <key>BundleProgram</key>
+    <string>Contents/MacOS/RiffMacster</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/usr/local/libexec/riffmacster</string>
+        <string>RiffMacster</string>
+        <string>--agent</string>
     </array>
-    <!-- Start only when the guitar's USB device appears (plugged in, dongle paired,
-         or already present at boot). No RunAtLoad / KeepAlive: the helper exits on
-         unplug and launchd starts it again on the next connect. -->
+    <key>AssociatedBundleIdentifiers</key>
+    <array>
+        <string>com.riffmacster.app</string>
+    </array>
     <key>LaunchEvents</key>
     <dict>
         <key>com.apple.iokit.matching</key>

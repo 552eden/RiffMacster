@@ -12,3 +12,7 @@ PLAN.md
 CLAUDE.md
 CLAUDE.local.md
 .claude/
+
+# Xcode per-user state
+xcuserdata/
+*.xcworkspace/xcuserdata/
