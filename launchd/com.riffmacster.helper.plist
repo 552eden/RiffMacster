@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.riffmacster.helper</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/libexec/riffmacster</string>
+    </array>
+    <!-- Start only when the guitar's USB device appears (plugged in, dongle paired,
+         or already present at boot). No RunAtLoad / KeepAlive: the helper exits on
+         unplug and launchd starts it again on the next connect. -->
+    <key>LaunchEvents</key>
+    <dict>
+        <key>com.apple.iokit.matching</key>
+        <dict>
+            <key>com.riffmacster.guitar</key>
+            <dict>
+                <key>IOProviderClass</key>
+                <string>IOUSBHostDevice</string>
+                <key>idVendor</key>
+                <integer>3695</integer>
+                <key>idProduct</key>
+                <integer>585</integer>
+                <key>IOMatchLaunchStream</key>
+                <true/>
+            </dict>
+        </dict>
+    </dict>
+    <key>ProcessType</key>
+    <string>Interactive</string>
+</dict>
+</plist>

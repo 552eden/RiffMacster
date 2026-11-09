@@ -1,0 +1,14 @@
+build/
+.DS_Store
+
+# Signing material: never commit
+*.provisionprofile
+*.mobileprovision
+*.p12
+*.cer
+
+# Local-only notes and Claude files
+PLAN.md
+CLAUDE.md
+CLAUDE.local.md
+.claude/
