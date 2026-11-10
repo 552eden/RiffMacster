@@ -3,6 +3,12 @@
 Makes the **whammy bar and tilt sensor** of the **PDP RiffMaster for PlayStation 5**
 work on macOS, in Clone Hero and any other game that reads controllers.
 
+## Download
+
+Get **RiffMacster-x.y.z.dmg** from [Releases](https://github.com/552eden/RiffMacster/releases/latest),
+open it and drag RiffMacster to Applications. The app is signed with Developer ID and
+notarized by Apple. Requires macOS 13 or later (Apple Silicon or Intel).
+
 ## Using it
 
 1. Open **RiffMacster.app**. If it isn't in your Applications folder, it offers to copy

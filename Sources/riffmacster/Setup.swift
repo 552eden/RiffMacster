@@ -47,8 +47,7 @@ enum Setup {
             lines.append("The background helper is in an unexpected state (\(agent.status.rawValue)).")
         }
         lines.append(CloneHero.installPreset().message)
-        lines.append("Whammy and tilt are calibrated out of the box (they rest at the center of their range).")
-
+        
         var buttons = needsApproval ? ["Open Login Items", "Later"] : ["OK"]
         buttons.append("Uninstall…")
         let choice = alert("RiffMacster", lines.joined(separator: "\n\n"), buttons: buttons)

@@ -11,8 +11,12 @@ final class StatusItemController: NSObject {
         guard item == nil else { return }
         let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         if let button = item.button {
-            let image = NSImage(systemSymbolName: "guitars", accessibilityDescription: "RiffMacster")
+            // RiffMaster line-art template (asset catalog); macOS tints it for light/dark/highlight.
+            let image = NSImage(named: "MenuBarIcon")
+                ?? NSImage(systemSymbolName: "guitars", accessibilityDescription: "RiffMacster")
             image?.isTemplate = true
+            image?.size = NSSize(width: 18, height: 18)
+            image?.accessibilityDescription = "RiffMacster"
             button.image = image
             button.toolTip = "RiffMacster: Active"
         }
